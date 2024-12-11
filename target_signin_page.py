@@ -18,4 +18,5 @@ driver.find_element(By.XPATH, "//span[@class='sc-58ad44c0-3 kkWqdY h-margin-r-x3
 sleep(7)
 driver.find_element(By.XPATH, "//button[@data-test='accountNav-signIn']").click()
 
-sleep(20)
+sleep(10)
+
