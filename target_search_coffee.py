@@ -24,5 +24,4 @@ expected_result = 'coffee'
 actual_result = driver.find_element(By.XPATH, "//div[@data-test='resultsHeading']").text
 
 print(actual_result)
-
 sleep(10)

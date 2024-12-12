@@ -1,8 +1,6 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
 
-from target_search_coffee import actual_result
-
 @then('Verify search results shown for {product}')
 def verify_search_results(context, product):
     actual_result = context.driver.find_element(By.XPATH, "//div[@data-test='resultsHeading']").text
