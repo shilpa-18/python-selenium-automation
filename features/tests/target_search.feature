@@ -1,6 +1,5 @@
 Feature: Tests for search
 
-#  Scenario: User can search for a product
   Scenario: User can search for tea
     Given Open target main page
     When Search for tea

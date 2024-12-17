@@ -9,6 +9,7 @@ def open_main(context):
 @then('Verify at least 10 benefit cells are shown')
 def verify_benefit_cells(context):
     cells = context.driver.find_elements(By.CSS_SELECTOR, "[data-test*='@web/slingshot-components/CellsComponent/Link']")
+    sleep(5)
     print('\nFind Elements')
     print(cells)
     print(len(cells))
