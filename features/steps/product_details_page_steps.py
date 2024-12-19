@@ -4,7 +4,7 @@ from time import sleep
 
 
 COLOR_OPTIONS = (By.CSS_SELECTOR, "div[aria-label='Carousel'] li img")
-SELECTED_COLOR =(By.CSS_SELECTOR, "div[aria-label='Carousel']")
+SELECTED_COLOR = (By.CSS_SELECTOR,'[data-test="@web/VariationComponent"]:nth-child(3) div')
 
 
 @given('Open target product {product_id} page')
@@ -15,7 +15,7 @@ def open_target(context, product_id):
 
 @then('Verify user can click through colors')
 def click_and_verify_colors(context):
-    expected_colors = ['grey', 'navy/tan', 'white/navy/red', 'sand/tan']
+    expected_colors = ['grey', 'navy/tan', 'white/sand/tan', 'white/navy/red - Out of Stock']
     actual_colors = []
 
     colors = context.driver.find_elements(*COLOR_OPTIONS)  # [webelement1, webelement2, webelement3]
