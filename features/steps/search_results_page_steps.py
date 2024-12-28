@@ -22,11 +22,14 @@ def click_add_to_cart(context):
     context.driver.find_element(*ADD_TO_CART_BTN).click()  # always clicks on 1st Add to cart btn
     # context.driver.find_elements(By.CSS_SELECTOR, "[id*='addToCartButton']")[0].click()
     # context.driver.wait.until(EC.visibility_of_element_located(ADD_TO_CART_SIDE_NAV_BTN))
+
 @when('Store product name')
 def store_product_name(context):
     context.product_name = context.driver.find_element(*PRODUCT_NAME).text
     print(f'Product stored: {context.product_name}')
 @when('Confirm Add to Cart button from side navigation')
+
+
 def side_nav_click_add_to_cart(context):
     context.driver.wait.until(EC.element_to_be_clickable(ADD_TO_CART_SIDE_NAV_BTN)).click()
     # context.driver.find_element(*ADD_TO_CART_SIDE_NAV_BTN)
