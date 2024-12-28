@@ -15,8 +15,15 @@ Feature: Tests for search
     When Search for a mug
     Then Verify search results shown for a mug
 
-  Scenario: User can search for a mug
+  Scenario Outline: User can search for a product
     Given Open target main page
-    When Search for lamp
-    Then Verify search results shown for lamp
+    When Search for <product>
+    Then Verify search results shown for <product>
+    Examples:
+    |product    |
+    |coffee     |
+    |tea        |
+    |mug        |
+
+
 
