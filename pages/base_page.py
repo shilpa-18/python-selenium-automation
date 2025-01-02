@@ -20,9 +20,12 @@ class BasePage:
     def input_text(self, text, *locator):
         self.driver.find_element(*locator).send_keys(text)
 
-    #def click_cart(self, *locator):
-         #return self.driver.find_element(*locator).click_cart
+    def click_cart(self, *locator):
+         return self.driver.find_element(*locator).click_cart
 
+    def verify_text(self, expected_text, *locator):
+        actual_text = self.find_element(*locator).text
+        assert expected_text == actual_text, f'Expected {expected_text}, but got {actual_text}'
 
 # page = BasePage
 # element = page.find_element((By.CSS_SELECTOR, "[data-test='@web/CartLink']"))

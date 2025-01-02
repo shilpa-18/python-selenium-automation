@@ -7,6 +7,8 @@ class Header(BasePage):
     SEARCH_FIELD = (By.ID, 'search')
     SEARCH_BTN = (By.XPATH, "//button[@data-test='@web/Search/SearchButton']")
     CART_ICON = (By.CSS_SELECTOR, "[data-test='@web/CartLink']")
+    SIGN_IN = (By.XPATH, "//span[@class='sc-58ad44c0-3 kkWqdY h-margin-r-x3']")
+    SIGN_IN_PAGE = (By.XPATH, "//button[@data-test='accountNav-signIn']")
 
     def search_product(self, product):
         self.input_text(product, *self.SEARCH_FIELD)
@@ -15,4 +17,12 @@ class Header(BasePage):
 
     def click_cart(self, *locator):
         self.click(*self.CART_ICON)
+        sleep(10)
+
+    def click_sign_in(self, *locator):
+        self.click(*self.SIGN_IN)
+        sleep(10)
+
+    def click_sign_in_page(self, *locator):
+        self.click(*self.SIGN_IN_PAGE)
         sleep(10)

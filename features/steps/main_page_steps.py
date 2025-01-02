@@ -5,6 +5,8 @@ from time import sleep
 SEARCH_FIELD = (By.ID, 'search')
 SEARCH_BTN = (By.XPATH, "//button[@data-test='@web/Search/SearchButton']")
 CART_ICON = (By.CSS_SELECTOR, "[data-test='@web/CartLink']")
+SIGN_IN = (By.XPATH, "//span[@class='sc-58ad44c0-3 kkWqdY h-margin-r-x3']")
+SIGN_IN_PAGE = (By.XPATH, "//button[@data-test='accountNav-signIn']")
 
 
 @given('Open target main page')
@@ -25,6 +27,13 @@ def search_product(context, product):
 def click_cart(context):
     context.app.header.click_cart()
 
+@when('Click on Sign in')
+def click_sign_in(context):
+    context.app.header.click_sign_in()
+
+@when('Click on Sign in page')
+def click_sign_in_page(context):
+    context.app.header.click_sign_in_page()
 
 @then('Verify at least 1 header link is shown')
 def verify_header_links(context):
