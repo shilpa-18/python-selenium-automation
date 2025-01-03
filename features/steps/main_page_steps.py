@@ -20,7 +20,7 @@ def search_product(context, product):
     context.driver.find_element(*SEARCH_FIELD).send_keys(product)
     context.driver.find_element(*SEARCH_BTN).click()
     sleep(10)
-    context.app.header.search_product(product)
+    context.app.main_page.search_product(product)
 
 
 @when('Click on Cart icon')
@@ -40,7 +40,6 @@ def verify_header_links(context):
     el = context.driver.find_element(By.CSS_SELECTOR, "[data-test*='@web/GlobalHeader/UtilityHeader/']")
     print('\nFind element:')
     print(el)
-
 
 @then('Verify {expected_amount} header links are shown')
 def verify_header_links_amount(context, expected_amount):
