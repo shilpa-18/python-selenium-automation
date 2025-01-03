@@ -4,4 +4,4 @@ from behave import given, when, then
 
 @then("Verify Sign in form opened")
 def verify_sign_in_page_opened(context):
-    context.app.sign_in_page.open()
+    context.app.sign_in.verify_sign_in_page_opened()
