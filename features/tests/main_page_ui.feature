@@ -1,10 +1,8 @@
 # Created by lana at 12/5/24
-Feature: Tests for Main page UI
+Feature: User can filter the Secondary deals by Unit price range
 
-  Scenario: User can see header links
-    Given Open target main page
-    Then Verify at least 1 header link is shown
+  Scenario: User can go to the main page
+    Given Open “Secondary” option at the left side menu
+    Then Verify the price in all cards is inside the range "(1200000 - 2000000)"
 
-  Scenario: User can see correct amount of header links
-    Given Open target main page
-    Then Verify 6 header links are shown
+
